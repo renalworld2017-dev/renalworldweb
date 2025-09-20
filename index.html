@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renal World Healthcare Pvt Ltd | Company Infographic</title>
+    <title>Renal World Healthcare Pvt Ltd | Corporate Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,20 +13,39 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F0F9FF;
+            line-height: 1.6;
         }
-        .chart-container {
+        .section-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1rem;
             position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
+            z-index: 10;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
+        .cover-page {
+            min-height: 100vh;
+            background: #E6F3F7;
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            color: #005F73;
+        }
+        .cover-content {
+            max-width: 800px;
+            text-align: left;
+        }
+        .cover-content h2 {
+            border-left: 4px solid #0A9396;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
         }
         .stat-card {
             background-color: white;
@@ -39,217 +58,197 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
+        .nav-link {
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #E9D8A6;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .nav-link-active {
+            color: #E9D8A6;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body class="text-[#005F73]">
+<body class="text-[#005F73] pt-20">
 
-    <header class="bg-[#005F73] text-white text-center py-12 px-4">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-2">Renal World Healthcare Pvt Ltd</h1>
-        <p class="text-lg md:text-xl font-light text-[#E9D8A6]">Partnering for Excellence & Innovation in Renal Care</p>
-    </header>
+    <!-- Fixed Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-[#005F73] shadow-lg z-50 p-4">
+        <ul class="flex justify-center space-x-4 md:space-x-8 text-white text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
+            <li><a href="#cover-page" class="nav-link px-2 py-1 rounded-full">About Us</a></li>
+            <li><a href="#philosophy" class="nav-link px-2 py-1 rounded-full">Our Philosophy</a></li>
+            <li><a href="#mv" class="nav-link px-2 py-1 rounded-full">Mission & Vision</a></li>
+            <li><a href="#services" class="nav-link px-2 py-1 rounded-full">Products & Services</a></li>
+            <li><a href="#operational" class="nav-link px-2 py-1 rounded-full">Operational Excellence</a></li>
+            <li><a href="#market" class="nav-link px-2 py-1 rounded-full">Market Overview</a></li>
+        </ul>
+    </nav>
 
-    <main class="container mx-auto p-4 md:p-8">
-
-        <section id="mission" class="text-center mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Our Guiding Philosophy</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
-                We are more than a healthcare provider; we are a movement founded on the core principles of empathy, equity, and excellence in renal health. Our integrated care model ensures every aspect of a patient's well-being is prioritized.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="stat-card">
-                    <div class="text-5xl mb-4 text-[#EE9B00]">🤝</div>
-                    <h3 class="text-2xl font-bold mb-2 text-[#005F73]">Empathy</h3>
-                    <p class="text-gray-600">Placing patient needs and compassionate care at the forefront of everything we do.</p>
+    <!-- Cover Page -->
+    <section id="cover-page" class="cover-page">
+        <div class="mb-12">
+            <h1 class="text-6xl md:text-8xl font-extrabold text-[#005F73] mb-4">Renal World Healthcare</h1>
+            <p class="text-2xl md:text-3xl font-light text-[#0A9396]">Partnering for Excellence & Innovation in Renal Care</p>
+        </div>
+        <div class="cover-content bg-white p-8 md:p-12 rounded-lg shadow-xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-[#005F73]">
+                Corporate Profile
+            </h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Foundation and Specialization</h3>
+                    <p class="text-gray-700">Founded in 2019 in New Delhi, India, Renal World Healthcare Pvt Ltd specialises in healthcare for select human organs, particularly kidneys. We deliver a comprehensive and high-quality out-patient healthcare via a chain of super specialty clinics, dialysis centres and pharmacies.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="text-5xl mb-4 text-[#EE9B00]">⚖️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-[#005F73]">Equity</h3>
-                    <p class="text-gray-600">Striving to make high-quality renal care accessible and affordable for all communities.</p>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Commitment to Quality</h3>
+                    <p class="text-gray-700">Aiming for excellence, our primary focus is delivering high-quality healthcare services at affordable prices in under-served regions. We are committed to providing a healthier and enriched life to our trusted patients and partners.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="text-5xl mb-4 text-[#EE9B00]">🏆</div>
-                    <h3 class="text-2xl font-bold mb-2 text-[#005F73]">Excellence</h3>
-                    <p class="text-gray-600">Setting new benchmarks in diagnostics and treatment through advanced technology.</p>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Innovation</h3>
+                    <p class="text-gray-700">We leverage modern technology for patient care, OPD patient management, and record-keeping. We are developing native AI applications for smoother patient diagnosis, treatment, support, and outreach.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Service Region</h3>
+                    <p class="text-gray-700">With headquarters in New Delhi, our focus area is spread across Eastern India, bridging a significant healthcare gap in the region. We routinely organise healthcare & public awareness camps in peripheral regions of Eastern India to deliver much needed quality healthcare services.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Team and Facilities</h3>
+                    <p class="text-gray-700">Our team consists of highly qualified medical professionals, data & technologists, managerial professionals, trained technicians, and paramedics, among others. Our team is committed to serving the utmost quality healthcare services and pioneering new ways (research) of providing affordable and timely healthcare to patients.</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="mv" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#0A9396]">Our Mission & Vision</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700 text-center">
-                Our core purpose and future aspirations are built on a foundation of integrated, patient-centric care that sets new industry standards for quality and trust.
-            </p>
-            <div class="stat-card grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="text-center">
-                    <div class="text-5xl mb-4 text-[#EE9B00]">🎯</div>
-                    <h3 class="text-2xl font-bold mb-2">Our Mission</h3>
-                    <p class="text-gray-600">To deliver patient-centric renal care through an integrated model that combines empathy with advanced medical expertise.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl mb-4 text-[#EE9B00]">🔭</div>
-                    <h3 class="text-2xl font-bold mb-2">Our Vision</h3>
-                    <p class="text-gray-600">To be the most trusted name in renal healthcare, setting new benchmarks in diagnostic excellence and patient-centric care.</p>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#0A9396]">Core Business Services</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700 text-center">
-                Our services are built on a comprehensive and integrated model, designed to meet every patient's needs and provide holistic renal care under a single roof.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#CA6702]">🏥</div>
-                    <h3 class="text-2xl font-bold mb-2">Super Specialty Clinics</h3>
-                    <p class="text-gray-600">Advanced outpatient facilities providing expert consultations, diagnostics, and preventive care for all stages of kidney disease.</p>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#CA6702]">💧</div>
-                    <h3 class="text-2xl font-bold mb-2">Dialysis Care Centres</h3>
-                    <p class="text-gray-600">State-of-the-art centers offering safe, efficient, and comfortable dialysis treatments with a focus on patient well-being and quality of life.</p>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#CA6702]">💊</div>
-                    <h3 class="text-2xl font-bold mb-2">Retail Pharmacy</h3>
-                    <p class="text-gray-600">On-site pharmacy services providing a full range of medications and supplies, ensuring patients have convenient access to critical care products.</p>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#CA6702]">🤖</div>
-                    <h3 class="text-2xl font-bold mb-2">Enabling AI Technologies</h3>
-                    <p class="text-gray-600">Leveraging cutting-edge AI for predictive patient care, treatment optimization, and personalized health management, enhancing outcomes and efficiency.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="operational" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#0A9396]">Operational Excellence</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700 text-center">
-                Our operational model is designed for maximum efficiency and superior service delivery, built on a foundation of technology, infrastructure, and a highly skilled workforce.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#0A9396]">⚙️</div>
-                    <h3 class="text-2xl font-bold mb-2">Streamlined Clinical Workflow</h3>
-                    <p class="text-gray-600">Optimized processes and digital integration to reduce wait times, minimize errors, and ensure seamless patient journeys from diagnosis to treatment.</p>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#0A9396]">🏗️</div>
-                    <h3 class="text-2xl font-bold mb-2">World-class Infrastructure</h3>
-                    <p class="text-gray-600">Investing in modern, state-of-the-art facilities equipped with the latest medical technology to deliver the highest standards of renal care.</p>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-5xl mb-4 text-[#0A9396]">🧑‍⚕️</div>
-                    <h3 class="text-2xl font-bold mb-2">Trained Professionals</h3>
-                    <p class="text-gray-600">Our team of doctors, nurses, and technicians undergoes continuous training to provide expert, empathetic care and maintain clinical excellence.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="market" class="text-center bg-[#94D2BD] bg-opacity-20 rounded-lg p-8 mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">The Urgent Market Need in India</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
-                The demand for specialized renal care in India is immense and growing. A significant gap exists between the widespread prevalence of Chronic Kidney Disease and the limited treatment capacity, creating a critical need for scalable, patient-centric solutions. The numbers highlight this immense opportunity:
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="stat-card text-center">
-                    <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">11.5 Cr</p>
-                    <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">People with Chronic Kidney Disease in 2017</p>
-                    <p class="text-gray-600 mt-4">This figure represents the massive and growing population in need of long-term renal care and management. <br><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30045-3/fulltext" class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
-                </div>
-                <div class="stat-card text-center">
-                    <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">Over 2 L</p>
-                    <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">New Patients Added Annually</p>
-                    <p class="text-gray-600 mt-4">This constant influx of new patients creates a perpetual and urgent demand for more specialized care facilities and services across the country. <br><a href="https://sansad.in/getFile/loksabhaquestions/annex/184/AU4649_z9tKNs.pdf?source=pqals#:~:text=(a)%20whether%20it%20is%20a,details%20thereof%20along%20with%20the" class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
-                </div>
-                <div class="stat-card text-center">
-                    <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">4.33 L</p>
-                    <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">People Treated at PMNDP in 2025</p>
-                    <p class="text-gray-600 mt-4">While government programs are making strides, they still only serve a fraction of the total patient population, leaving a significant gap in care. <br><a href="https://sansad.in/getFile/loksabhaquestions/annex/184/AU4649_z9tKNs.pdf?source=pqals#:~:text=(a)%20whether%20it%20is%20a,details%20thereof%20along%20with%20the" class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
-                </div>
-                <div class="stat-card text-center">
-                    <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">18,911</p>
-                    <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">Kidney Transplants in 2024</p>
-                    <p class="text-gray-600 mt-4">The low number of transplants underscores the vital need for long-term, accessible dialysis and early detection services, which remain the primary form of treatment. <br><a href="https://medicalbuyer.co.in/india-achieves-milestone-with-record-18911-organ-transplants-in-2024/#:~:text=of%20The%20Day-,India%20achieves%20milestone%20with%20record%2018%2C911%20organ%20transplants%20in%202024,first%20for%20living%20donor%20surgeries." class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-[#005F73] text-white text-center py-8 px-4">
-        <h2 class="text-2xl font-bold mb-2">Why Partner with Renal World Healthcare?</h2>
-        <p class="max-w-4xl mx-auto text-[#E9D8A6] mb-4">
-            Join a mission-driven market leader with a clear strategic vision for growth, and a strong foundation. Together, we can redefine renal healthcare in India.
+    <!-- Our Philosophy Page -->
+    <section id="philosophy" class="section-page text-center bg-[#E6F3F7] p-4 md:p-8">
+        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Our Philosophy</h2>
+        <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
+            We are more than a healthcare provider; we are a movement founded on the core principles of empathy, equity, and excellence in renal health. Our integrated care model ensures every aspect of a patient's well-being is prioritized.
         </p>
-        <p class="text-sm">&copy; 2025 Renal World Healthcare Pvt Ltd. All Rights Reserved.</p>
-    </footer>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="stat-card">
+                <div class="text-5xl mb-4 text-[#EE9B00]">🤝</div>
+                <h3 class="text-2xl font-bold mb-2 text-[#005F73]">Empathy</h3>
+                <p class="text-gray-600">Placing patient needs and compassionate care at the forefront of everything we do.</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-5xl mb-4 text-[#EE9B00]">⚖️</div>
+                <h3 class="text-2xl font-bold mb-2 text-[#005F73]">Equity</h3>
+                <p class="text-gray-600">Striving to make high-quality renal care accessible and affordable for all communities.</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-5xl mb-4 text-[#EE9B00]">🏆</div>
+                <h3 class="text-2xl font-bold mb-2 text-[#005F73]">Excellence</h3>
+                <p class="text-gray-600">Setting new benchmarks in diagnostics and treatment through advanced technology.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Mission & Vision Page -->
+    <section id="mv" class="section-page text-center bg-white p-4 md:p-8">
+        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Our Mission & Vision</h2>
+        <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
+            Our core purpose and future aspirations are built on a foundation of integrated, patient-centric care that sets new industry standards for quality and trust.
+        </p>
+        <div class="stat-card grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="text-center">
+                <div class="text-5xl mb-4 text-[#EE9B00]">🎯</div>
+                <h3 class="text-2xl font-bold mb-2">Our Mission</h3>
+                <p class="text-gray-600">To deliver patient-centric renal care through an integrated model that combines empathy with advanced medical expertise.</p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl mb-4 text-[#EE9B00]">🔭</div>
+                <h3 class="text-2xl font-bold mb-2">Our Vision</h3>
+                <p class="text-gray-600">To be the most trusted name in renal healthcare, setting new benchmarks in diagnostic excellence and patient-centric care.</p>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            const brilliantBlues = {
-                primary: '#0A9396',
-                secondary: '#005F73',
-                accent1: '#EE9B00',
-                accent2: '#CA6702',
-                text: '#005F73',
-                grid: 'rgba(0, 95, 115, 0.1)',
-                bgLight: '#94D2BD'
-            };
+    <!-- Core Business Services Page -->
+    <section id="services" class="section-page text-center bg-[#E6F3F7] p-4 md:p-8">
+        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Core Business Services</h2>
+        <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
+            Our services are built on a comprehensive and integrated model, designed to meet every patient's needs and provide holistic renal care under a single roof.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div class="stat-card text-center">
+                <div class="text-5xl mb-4 text-[#CA6702]">🏥</div>
+                <h3 class="text-2xl font-bold mb-2">Super Specialty Clinics</h3>
+                <p class="text-gray-600">Advanced outpatient facilities providing expert consultations, diagnostics, and preventive care for all stages of kidney disease.</p>
+            </div>
+            <div class="stat-card text-center">
+                <div class="text-5xl mb-4 text-[#CA6702]">💧</div>
+                <h3 class="text-2xl font-bold mb-2">Dialysis Care Centres</h3>
+                <p class="text-gray-600">State-of-the-art centers offering safe, efficient, and comfortable dialysis treatments with a focus on patient well-being and quality of life.</p>
+            </div>
+            <div class="stat-card text-center">
+                <div class="text-5xl mb-4 text-[#CA6702]">💊</div>
+                <h3 class="text-2xl font-bold mb-2">Retail Pharmacy</h3>
+                <p class="text-gray-600">On-site pharmacy services providing a full range of medications and supplies, ensuring patients have convenient access to critical care products.</p>
+            </div>
+            <div class="stat-card text-center">
+                <div class="text-5xl mb-4 text-[#CA6702]">🤖</div>
+                <h3 class="text-2xl font-bold mb-2">Enabling AI Technologies</h3>
+                <p class="text-gray-600">Leveraging cutting-edge AI for predictive patient care, treatment optimization, and personalized health management, enhancing outcomes and efficiency.</p>
+            </div>
+        </div>
+    </section>
 
-            function processLabels(labels) {
-                const maxLen = 16;
-                return labels.map(label => {
-                    if (label.length <= maxLen) {
-                        return label;
-                    }
-                    const words = label.split(' ');
-                    const lines = [];
-                    let currentLine = '';
-                    for (const word of words) {
-                        if ((currentLine + ' ' + word).trim().length > maxLen) {
-                            lines.push(currentLine.trim());
-                            currentLine = word;
-                        } else {
-                            currentLine = (currentLine + ' ' + word).trim();
-                        }
-                    }
-                    if (currentLine) {
-                        lines.push(currentLine.trim());
-                    }
-                    return lines;
-                });
-            }
-            
-            const tooltipTitleCallback = {
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            color: brilliantBlues.text,
-                            font: {
-                                size: 14
-                            }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
-                            }
-                        }
-                    }
-                }
-            };
-            
-        });
-    </script>
+    <!-- Operational Excellence Page -->
+    <section id="operational" class="section-page text-center bg-white p-4 md:p-8">
+        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Operational Excellence</h2>
+        <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
+            Our operational model is designed for maximum efficiency and superior service delivery, built on a foundation of technology, infrastructure, and a highly skilled workforce.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="stat-card text-center">
+                 <div class="text-5xl mb-4 text-[#0A9396]">⚙️</div>
+                <h3 class="text-2xl font-bold mb-2">Streamlined Clinical Workflow</h3>
+                <p class="text-gray-600">Optimized processes and digital integration to reduce wait times, minimize errors, and ensure seamless patient journeys from diagnosis to treatment.</p>
+            </div>
+            <div class="stat-card text-center">
+                <div class="text-5xl mb-4 text-[#0A9396]">🏗️</div>
+                <h3 class="text-2xl font-bold mb-2">World-class Infrastructure</h3>
+                <p class="text-gray-600">Investing in modern, state-of-the-art facilities equipped with the latest medical technology to deliver the highest standards of renal care.</p>
+            </div>
+            <div class="stat-card text-center">
+                <div class="text-5xl mb-4 text-[#0A9396]">🧑‍⚕️</div>
+                <h3 class="text-2xl font-bold mb-2">Trained Professionals</h3>
+                <p class="text-gray-600">Our team of doctors, nurses, and technicians undergoes continuous training to provide expert, empathetic care and maintain clinical excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Urgent Market Need in India Page -->
+    <section id="market" class="section-page text-center bg-[#E6F3F7] p-4 md:p-8">
+        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Renal Care Market in India</h2>
+        <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
+            The demand for specialized renal care in India is immense and growing. A significant gap exists between the widespread prevalence of Chronic Kidney Disease and the limited treatment capacity, creating a critical need for scalable, patient-centric solutions. The numbers highlight this immense opportunity:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="stat-card text-center">
+                <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">11.5 Cr</p>
+                <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">People with Chronic Kidney Disease in 2017</p>
+                <p class="text-gray-600 mt-4">This figure represents the massive and growing population in need of long-term renal care and management. <br><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30045-3/fulltext" class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
+            </div>
+            <div class="stat-card text-center">
+                <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">Over 2 L</p>
+                <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">New Patients Added Annually</p>
+                <p class="text-gray-600 mt-4">This constant influx of new patients creates a perpetual and urgent demand for more specialized care facilities and services across the country. <br><a href="/https://sansad.in/getFile/loksabhaquestions/annex/184/AU4649_z9tKNs.pdf?source=pqals#:~:text=(a)%29%20whether%20it%20is%20a,details%20thereof%20along%20with%20the" class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
+            </div>
+            <div class="stat-card text-center">
+                <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">4.33 L</p>
+                <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">People Treated at PMNDP in 2025</p>
+                <p class="text-gray-600 mt-4">While government programs are making strides, they still only serve a fraction of the total patient population, leaving a significant gap in care. <br><a href="/https://sansad.in/getFile/loksabhaquestions/annex/184/AU4649_z9tKNs.pdf?source=pqals#:~:text=(a)%29%20whether%20it%20is%20a,details%20thereof%20along%20with%20the" class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
+            </div>
+            <div class="stat-card text-center">
+                <p class="text-7xl md:text-7xl font-extrabold text-[#CA6702]">18,911</p>
+                <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">Kidney Transplants in 2024</p>
+                <p class="text-gray-600 mt-4">The low number of transplants underscores the vital need for long-term, accessible dialysis and early detection services, which remain the primary form of treatment. <br><a href="https://medicalbuyer.co.in/india-achieves-milestone-with-record-18911-organ-transplants-in-2024/#:~:text=of%20The%20Day-,India%20achieves%20milestone%20with%20record%2018%2C911%20organ%20transplants%20in%202024,first%20for%20living%20donor%20surgeries." class="text-[#0A9396] text-sm underline" target="_blank">Source</a></p>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
