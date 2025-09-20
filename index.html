@@ -1,3 +1,4 @@
+%%HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +70,30 @@
             color: #E9D8A6;
             font-weight: bold;
         }
+        /* Image Slider styles */
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 300px; /* Fixed height to prevent CLS */
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            max-width: 900px;
+            width: 100%;
+        }
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
     </style>
 </head>
 <body class="text-[#005F73] pt-20">
@@ -79,9 +104,9 @@
             <li><a href="#cover-page" class="nav-link px-2 py-1 rounded-full">About Us</a></li>
             <li><a href="#philosophy" class="nav-link px-2 py-1 rounded-full">Our Philosophy</a></li>
             <li><a href="#mv" class="nav-link px-2 py-1 rounded-full">Mission & Vision</a></li>
-            <li><a href="#services" class="nav-link px-2 py-1 rounded-full">Products & Services</a></li>
+            <li><a href="#services" class="nav-link px-2 py-1 rounded-full">Core Services</a></li>
             <li><a href="#operational" class="nav-link px-2 py-1 rounded-full">Operational Excellence</a></li>
-            <li><a href="#market" class="nav-link px-2 py-1 rounded-full">Market Overview</a></li>
+            <li><a href="#market" class="nav-link px-2 py-1 rounded-full">Market Need</a></li>
         </ul>
     </nav>
 
@@ -91,6 +116,18 @@
             <h1 class="text-6xl md:text-8xl font-extrabold text-[#005F73] mb-4">Renal World Healthcare</h1>
             <p class="text-2xl md:text-3xl font-light text-[#0A9396]">Partnering for Excellence & Innovation in Renal Care</p>
         </div>
+
+        <!-- Image Slider -->
+        <div class="slider-wrapper my-8 md:my-12">
+            <div id="image-slider" class="slider-container">
+                <!-- Images will be dynamically inserted here -->
+            </div>
+            <div class="flex justify-center space-x-4 mt-4">
+                <button onclick="prevSlide()" class="px-4 py-2 bg-[#0A9396] text-white rounded-full hover:bg-[#005F73] transition-colors">Prev</button>
+                <button onclick="nextSlide()" class="px-4 py-2 bg-[#0A9396] text-white rounded-full hover:bg-[#005F73] transition-colors">Next</button>
+            </div>
+        </div>
+
         <div class="cover-content bg-white p-8 md:p-12 rounded-lg shadow-xl">
             <h2 class="text-3xl md:text-4xl font-extrabold text-[#005F73]">
                 Corporate Profile
@@ -222,7 +259,7 @@
 
     <!-- The Urgent Market Need in India Page -->
     <section id="market" class="section-page text-center bg-[#E6F3F7] p-4 md:p-8">
-        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">Renal Care Market in India</h2>
+        <h2 class="text-3xl font-bold mb-4 text-[#0A9396]">The Urgent Market Need in India</h2>
         <p class="max-w-3xl mx-auto text-lg mb-8 text-gray-700">
             The demand for specialized renal care in India is immense and growing. A significant gap exists between the widespread prevalence of Chronic Kidney Disease and the limited treatment capacity, creating a critical need for scalable, patient-centric solutions. The numbers highlight this immense opportunity:
         </p>
@@ -250,5 +287,58 @@
         </div>
     </section>
 
+    <script>
+        const slider = document.getElementById('image-slider');
+        const images = [
+            { url: "https://placehold.co/900x500/0A9396/FFFFFF", alt: "Modern Healthcare Infrastructure" },
+            { url: "https://placehold.co/900x500/94D2BD/FFFFFF", alt: "Doctors and Nurses" },
+            { url: "https://placehold.co/900x500/E9D8A6/FFFFFF", alt: "Patient Care and Compassion" }
+        ];
+
+        let currentIndex = 0;
+        const totalImages = images.length;
+
+        // Dynamically create and add images
+        images.forEach(img => {
+            const imgElement = document.createElement('img');
+            imgElement.src = img.url;
+            imgElement.alt = img.alt;
+            imgElement.className = 'slider-image';
+            slider.appendChild(imgElement);
+        });
+
+        // Function to update the slider position
+        function updateSlider() {
+            slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        // Navigation functions
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateSlider();
+        }
+        
+        // Auto-play feature
+        let autoPlayInterval = setInterval(nextSlide, 5000); // Change image every 5 seconds
+
+        // Pause auto-play on hover
+        slider.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        
+        // Resume auto-play when not hovering
+        slider.parentElement.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+
+        window.prevSlide = prevSlide;
+        window.nextSlide = nextSlide;
+
+    </script>
 </body>
 </html>
